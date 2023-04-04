@@ -15,7 +15,6 @@ namespace CleanMovie.WebAPI.Controllers
     public class MoviesController : ControllerBase
     {
         private readonly IMovieService _IMovieService;
-
         public MoviesController(IMovieService IMovieService)
         {
             _IMovieService = IMovieService;
@@ -28,6 +27,13 @@ namespace CleanMovie.WebAPI.Controllers
         {
             var moviesFromService = _IMovieService.GetallMovies();
             return Ok(moviesFromService);
+        }
+
+        [HttpPost]
+        public ActionResult<Movie> Post(Movie movie)
+        {
+            _IMovieService.CreateMovie(movie);
+            return Ok(movie);
         }
 
         // GET api/<MoviesController>/5

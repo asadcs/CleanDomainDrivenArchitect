@@ -8,5 +8,6 @@ namespace CleanMovie.Application
     public interface IMovieService
     {
         public List<Movie> GetallMovies();
+        public Movie CreateMovie(Movie movie);
     }
 }

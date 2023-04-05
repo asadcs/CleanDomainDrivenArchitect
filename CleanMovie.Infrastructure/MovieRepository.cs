@@ -9,11 +9,7 @@ namespace CleanMovie.Infrastructure
 {
     public class MovieRepository : IMovieRepository
     {
-        public static List<Movie> movies = new List<Movie>()
-        {
-            new Movie{Id=1, Name="Avatar" , Cost=100},
-            new Movie{Id=2,Name="Chalk Line",Cost=200}
-        };
+       
 
         private readonly MovieDBContext _movieDBContext;
 

@@ -6,8 +6,12 @@ namespace CleanMovie.Domain
 {
     public class Movie
     {
-        public int Id { get; set; }
-        public string Name { get; set; } = string.Empty;
-        public decimal Cost { get; set; }
+        public int MovieId { get; set; }
+        public string MovieName { get; set; } = string.Empty;
+        public decimal RentalCost { get; set; }
+        public int RentalDuration { get; set; }
+
+        //For MovieRental Many to Many
+        public IList<MovieRental> Movierentals { get; set; }
     }
 }
